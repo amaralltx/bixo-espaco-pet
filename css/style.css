@@ -1,26 +1,30 @@
 *:focus {
     outline: none;
 }
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 /* Cores */
 :root {
-    --fundo: #84968D;
+    --principal: #84968D;
     --bege: #EAEAE2;
     --azul: #248F91;
     --verde: #47936E;
     --marrom: #7B634E;
-    --azul-fonte: #236d6d;
+    --fonte: #5a6961;
+    --vermelho: #9c5151;
 }
 html, body {
     height: 100%;
-    margin: 0;
-    padding: 0;
     width: 100%;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--escuro);
+    font-size: 14px;
+    background: var(--principal);
     display: flex;
     flex-direction: column;
 }
@@ -30,28 +34,25 @@ a {
     color: inherit;
     outline: none;
     -webkit-tap-highlight-color: transparent;
-    &:visited {
-        color: inherit;
-    }
 }
 
 /* Header */
 .site-header {
     background-color: var(--bege);
-    padding: 1rem 10rem;
+    padding: 0.5rem 5rem;
 }
 
 .logo-svg {
-    height: 3rem;
+    height: 4rem;
 }
 
 /* Conteúdo principal */
 
 .crud-container {
-    padding: 2rem 15rem;
-    background: var(--fundo);
+    padding: 2rem 0rem;
     display: flex;
     flex-direction: column;
+    max-width: fit-content;
 }
 
 .form-header {
@@ -61,22 +62,27 @@ a {
 
 .search-bar {
     display: flex;
-    justify-content: space-between;
     background-color: white;
-    height: 3rem;
+    height: 2.5rem;
     width: 40rem;
     border-radius: 5px;
 }
 
+.search-bar form {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+}
 .search-bar img{
     width: 2rem;
-    margin: auto
+    margin: auto 0.5rem;
 }
 
 .search-input {
     border: none;
-    margin: auto;
+    margin: auto 0rem;
     height: auto;
+    padding: 0.5rem;
     width: 80%;
     background-color: white;
 }
@@ -90,42 +96,40 @@ button {
     transition: 0.3s;
 }
 
-.btn-add{
-    height: 3rem;
+.btn-add, .btn-save{
+    height: 2.5rem;
     width: 10rem;
-    background-color: #47936E;
+    background-color: #3d7441;
     color: white;
     transition: display 0.4s ease-in-out;
 }
 
 .btn-add:hover, .btn-save:hover{
-    background-color: #447c61;
+    background-color: #2c8835;
 }
 
 .btn-cancel{
     display: none;
     margin-right: 3rem;
-    height: 3rem;
+    height: 2.5rem;
     width: 10rem;
     background-color: #e0e0e0;
     color: rgb(78, 78, 78);
-    transition: display 0.4s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 .btn-cancel:hover{
-    background-color: var(--marrom);
+    background-color: var(--vermelho);
     color: white;
 }
 
 .btn-save {
     display: none;
-    height: 3rem;
-    width: 10rem;
-    background-color: #47936E;
-    color: white;
-    transition: display 0.4s ease-in-out;
 }
 
 /* Formulário */
+ .crud-form {
+    border: 1px solid var(--principal);
+ }
 
 .register-container{
     background-color: white;
@@ -137,16 +141,17 @@ button {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-in-out;
+    margin-bottom: 0rem;
 }
 
 .register-section {
     width: 40%;
     margin: 10px;
     padding: 10px;
-    color: var(--fundo);
+    color: var(--principal);
 }
 .register-section h2 {
-    color: var(--fundo);
+    color: var(--principal);
     margin-bottom: 1rem;
 }
 
@@ -167,57 +172,32 @@ button {
 }
 
 .input-register input{
-    border: 1px solid var(--fundo);
+    border: 1px solid var(--principal);
     border-radius: 5px;
     height: 2rem;
     padding: 0 0.5rem;
-    height: 3rem;
+}
+
+select {
+    border: 1px solid var(--principal);
+    border-radius: 5px;
+    height: 2.1rem;
+    padding: 0 0.55rem;
+    background-color: transparent;
 }
 
 /* Tabela principal */
-.div-table { 
-    color: var(--fundo);
-    padding: 2rem;
-    flex: 1;
-    background-color: white;
-    margin-bottom: 3rem;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-.crud-table {
-    border-collapse: collapse
-}
-.crud-table td,
-.crud-table th {
-    padding: 1rem 0.5rem; 
-}
-
-.table-head {
-    border-bottom: 1px solid var(--fundo);
-}
-
-.table-head tr {
-    margin-bottom: 10px;
-}
-
-.edit-collum {
-    text-align: center;
-}
 
 /* Rodapé */
 .site-footer {
     background-color: var(--bege);
     padding: 1.5rem 2rem;
-    margin-top: 0;
     text-align: center;
-    color: var(--azul-fonte);
+    color: var(--fonte);
 }
 
 .site-footer img{
-    max-width: 5rem;
+    max-width: 4rem;
     margin-top: 1rem;
 }
 
@@ -226,6 +206,30 @@ button {
     margin-top: 1rem;
 }
 
+.return-arrow {
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    z-index: 3;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-size: larger;
+    transition: all 0.2s ease-in-out;
+}
+
+.return-arrow:hover {
+    color: rgb(245, 245, 245);
+}
+
+@media (max-width: 1500px) {
+    .crud-container {
+        padding: 2rem 5rem;
+    }
+    
+    .crud-form {
+        grid-template-columns: 1fr;
+    }
+}
 @media (max-width: 600px) {
     .crud-container {
         padding: 1rem;
