@@ -27,7 +27,7 @@ require 'config/config.php';
     // Adiciona um event listener para mostrar o formulário de adicionar cliente
     document.querySelector("#add_btn").addEventListener("click", function() {
       // Seleciona os elementos do DOM que aparecem e desaparecem
-      var formContainer = document.querySelector(".register-container");
+      var formContainer = document.querySelector(".crud-form");
       var btnCancel = document.querySelector("#cancel_btn");
       var btnAdd = document.querySelector("#add_btn");
       var btnSave = document.querySelector("#save_btn");
@@ -44,12 +44,12 @@ require 'config/config.php';
     document
       .querySelector("#cancel_btn")
       .addEventListener("click", function() {
-        var formContainer = document.querySelector(".register-container");
+        var formContainer = document.querySelector(".crud-form");
         var btnCancel = document.querySelector("#cancel_btn");
         var btnAdd = document.querySelector("#add_btn");
         var btnSave = document.querySelector("#save_btn");
         var tabela = document.querySelector(".div-table");
-        setTimeout(() => (formContainer.style.maxHeight = "0"), 100);
+        setTimeout(() => (formContainer.style.maxHeight = "1.5rem"), 100);
         setTimeout(() => (btnCancel.style.display = "none"), 100);
         setTimeout(() => (btnSave.style.display = "none"), 100);
         setTimeout(() => (btnAdd.style.display = "inline"), 100);

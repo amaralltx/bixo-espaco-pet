@@ -129,6 +129,10 @@ button {
 /* Formulário */
  .crud-form {
     border: 1px solid var(--principal);
+    max-height: 2rem;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    margin-bottom: 0rem;
  }
 
 .register-container{
@@ -138,11 +142,7 @@ button {
     display: flex;
     justify-content: space-between;
     margin-top: 3rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
-    margin-bottom: 0rem;
-}
+ }
 
 .register-section {
     width: 40%;
@@ -152,7 +152,7 @@ button {
 }
 .register-section h2 {
     color: var(--principal);
-    margin-bottom: 1rem;
+    margin: 1rem 0rem;
 }
 
 .half-register-section{
@@ -211,14 +211,18 @@ select {
     top: 1rem;
     left: 2rem;
     z-index: 3;
-    color: rgb(255, 255, 255);
+    color: var(--principal);
     font-weight: bolder;
     font-size: larger;
+    background-color: white;
+    padding: 0.65rem;
+    border-radius: 0.5rem;
     transition: all 0.2s ease-in-out;
 }
 
 .return-arrow:hover {
-    color: rgb(245, 245, 245);
+    background-color: var(--principal);
+    color: white;
 }
 
 @media (max-width: 1500px) {

@@ -27,13 +27,12 @@ function getClientIP() {
     if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
         return $_SERVER['HTTP_CLIENT_IP'];
     } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-        // Pode conter uma lista de IPs separados por vírgula
         $ips = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
         return trim($ips[0]);
     } elseif (!empty($_SERVER['HTTP_X_REAL_IP'])) {
         return $_SERVER['HTTP_X_REAL_IP'];
     } else {
-        return "batata";
+        return $_SERVER['REMOTE_ADDR'];
     }
 }
 

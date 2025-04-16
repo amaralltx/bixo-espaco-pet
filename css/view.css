@@ -33,7 +33,7 @@ h2 {
     background-color: rgb(255, 255, 255);
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 42%;
+    height: auto;
     width: 40%;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     z-index: 2;
@@ -43,7 +43,7 @@ h2 {
 
 .right-card, .left-card{
     padding: 1rem 2.5rem;
-    width: 45%;
+    width: 50%;
     align-items: center;
     text-align: center;
     color: var(--azul-fonte);
@@ -57,6 +57,16 @@ h2 {
 
 .card-body {
     text-align: left;
+}
+
+.card-content {
+    margin-bottom: 1rem;
+}
+
+.user-last-update {
+   margin-top: 2rem;
+   color: var(--fonte);
+   font-weight: 500;
 }
 
 .site-footer {

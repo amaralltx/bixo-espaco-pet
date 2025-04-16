@@ -39,6 +39,7 @@ h4 {
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
+    color: rgb(80, 80, 80);
 }
 
 th, td {
@@ -59,7 +60,7 @@ tbody tr:nth-child(even) {
 
 .card-footer{
     text-align: center;
-    margin: 1rem;
+    margin-top: 2rem;
     color: var(--fonte);
     font-weight: 500;
 }

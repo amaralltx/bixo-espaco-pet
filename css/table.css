@@ -2,13 +2,12 @@
     color: var(--fonte);
     padding-top: 0.5rem;
     background-color: white;
-    margin-bottom: 3rem;
-    border-radius: 5px;
+    border-radius: 0.25rem;
     text-align: left;
     width: fit-content;
     display: flex;
     justify-content: center;
-    transform: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .detail-row{
